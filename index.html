@@ -474,6 +474,239 @@
                 height: 55px;
             }
         }
+
+        /* Fluid layout overrides for phones and narrow tablets */
+        .wheel-section,
+        .game-section {
+            width: 100%;
+            min-width: 0;
+        }
+
+        .wheel-section {
+            flex: 1 1 500px;
+            max-width: 600px;
+        }
+
+        .game-section {
+            flex: 1 1 500px;
+            max-width: 600px;
+        }
+
+        .wheel-wrapper {
+            width: min(600px, 100%);
+            height: auto;
+            aspect-ratio: 1;
+        }
+
+        .main-content {
+            gap: clamp(24px, 4vw, 60px);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 6vw, 4.2em);
+            line-height: 1.12;
+            overflow-wrap: anywhere;
+        }
+
+        .subtitle {
+            font-size: clamp(1.1rem, 3.5vw, 1.8em);
+            line-height: 1.35;
+        }
+
+        .game-panel {
+            padding: clamp(18px, 4vw, 35px);
+        }
+
+        .current-word {
+            font-size: clamp(1.35rem, 6vw, 3.5em);
+            line-height: 1.15;
+            overflow-wrap: anywhere;
+            min-height: 0;
+        }
+
+        .stats-container {
+            gap: clamp(8px, 2vw, 40px);
+        }
+
+        .stat-item {
+            min-width: 0;
+        }
+
+        @media (max-width: 1200px) {
+            .main-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .wheel-section,
+            .game-section {
+                flex: none;
+                width: 100%;
+                max-width: 600px;
+            }
+
+            .wheel-wrapper {
+                width: min(600px, 100%);
+                height: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 14px;
+            }
+
+            header {
+                padding: 14px 0 20px;
+            }
+
+            h1 {
+                font-size: clamp(1.9rem, 7vw, 3rem);
+            }
+
+            .subtitle {
+                margin-bottom: 18px;
+            }
+
+            .main-content {
+                gap: 24px;
+                margin-bottom: 24px;
+            }
+
+            .wheel-wrapper {
+                width: min(500px, 100%);
+                height: auto;
+            }
+
+            .wheel-center-btn {
+                width: 90px;
+                height: 90px;
+                font-size: 1em;
+            }
+
+            .wheel-pointer svg {
+                width: 40px;
+                height: 55px;
+            }
+
+            .game-panel {
+                padding: clamp(16px, 4vw, 22px);
+                border-radius: 16px;
+            }
+
+            .game-panel h2 {
+                font-size: clamp(1.5rem, 5vw, 2rem);
+            }
+
+            .instruction {
+                font-size: clamp(1rem, 3.5vw, 1.25rem);
+                padding: 12px;
+                margin-bottom: 18px;
+            }
+
+            .current-word-container {
+                padding: 16px 12px;
+                margin: 18px 0;
+            }
+
+            .current-word-label {
+                font-size: 1.1rem;
+            }
+
+            .answer-buttons {
+                flex-direction: column;
+                gap: 12px;
+                width: 100%;
+                margin: 20px 0 24px;
+            }
+
+            .answer-btn {
+                width: 100%;
+                min-width: 0;
+                padding: 14px 18px;
+                font-size: 1.25rem;
+            }
+
+            .stats-container {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                width: 100%;
+                gap: 8px;
+            }
+
+            .stat-item {
+                padding: 10px 6px;
+            }
+
+            .stat-label {
+                font-size: clamp(0.75rem, 2.7vw, 1rem);
+                overflow-wrap: anywhere;
+            }
+
+            .stat-value {
+                font-size: clamp(1.4rem, 6vw, 2rem);
+            }
+
+            .result-container {
+                padding: 14px;
+            }
+
+            .result-message {
+                font-size: clamp(1rem, 3.5vw, 1.2rem);
+            }
+
+            .rules {
+                padding: 20px;
+                margin-top: 24px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            body {
+                padding: 10px;
+            }
+
+            header {
+                padding-top: 8px;
+            }
+
+            h1 {
+                font-size: clamp(1.75rem, 8vw, 2.25rem);
+                letter-spacing: 0.5px;
+            }
+
+            .wheel-center-btn {
+                width: 76px;
+                height: 76px;
+                font-size: 0.85em;
+                letter-spacing: 1px;
+            }
+
+            .wheel-pointer {
+                top: -8px;
+            }
+
+            .wheel-pointer svg {
+                width: 34px;
+                height: 48px;
+            }
+
+            .game-panel {
+                padding: 14px;
+            }
+
+            .stats-container {
+                gap: 6px;
+            }
+
+            .stat-item {
+                padding: 9px 4px;
+            }
+
+            .result-message {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
